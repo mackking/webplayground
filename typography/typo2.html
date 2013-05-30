@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+
+        <style type="text/css">
+        	body {
+        		font-size: 100%;
+        		margin: 0;
+        		padding: 0;
+        	}
+
+        	h1 {
+			    font-size: 3rem; /* 48 / 16 */
+			}
+			h2 {
+			    font-size: 2.25rem; /* 36 / 16 */
+			}
+			h3 {
+			    font-size: 1.5rem; /* 24 / 16 */
+			}
+			h4 {
+			    font-size: 1.3125rem; /* 21 / 16 */
+			}
+			h5 {
+			    font-size: 1.125rem; /* 18 / 16 */
+			}
+			h6 {
+			    font-size: 1rem; /* 16 / 16 */
+			    font-variant: small-caps;
+			}
+
+			h1,h2,h3,h4,h5,h6 {
+				position: relative;
+			}
+
+			h1:before,h2:before,h3:before,h4:before,h5:before,h6:before {
+				
+				border: 2px solid gray;
+				background-color: lightgray;
+				padding: 2px;
+				font-size: 12px;
+				position: absolute;
+				right: 0;
+				
+				opacity: 0.5;
+			}
+			h1:before {
+				content: "3rem";
+				bottom: 1.5rem;
+			}
+			h2:before {
+				content: "2.25rem";
+				bottom: 1.125rem;
+			}
+			h3:before {
+				content: "1.5rem";
+				bottom: 0.75rem;
+			}
+			h4:before {
+				content: "1.3125rem";
+				bottom: 0.67rem;
+			}
+			h5:before {
+				content: "1.125rem";
+				bottom: 0.55rem;
+			}
+			h6:before {
+				content: "1rem";
+				bottom: 0.5rem;
+			}
+
+			p {
+			    font-size: 1rem; /* 16 / 16 */
+			}
+
+			h1 + p:first-line {
+				font-size: larger;
+				font-variant: small-caps;
+				letter-spacing: 0.1em;
+			}
+			
+			.font-switcher {
+				padding: 0.3em 0.5em;
+				background: #eee;
+				border-bottom: 2px solid darkgray;
+			}
+
+			.font-switcher label {
+				font-weight: bold;
+				margin-right: 0.5em;
+			}
+
+			#test-data {
+				width: 60%;
+				margin: 0 auto;
+			}
+        </style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+	</head>
+	<body>
+<div class="font-switcher">
+		<form>
+			<label for="ffam">Font Familly:</label>
+			<input type="text" size="20" name="ffam" id="ffam">
+			<label for="fsize">Font size:</label>
+			<input type="text" size="2" name="fsize" id="fsize">
+			<select name="fsizeunit" id="fsizeunit"><option value="px">px</option><option value="em">em</option><option value="rem">rem</option></select>
+			<label for="lhigh">Line Height:</label>
+			<input type="text" size="2" name="lhigh" id="lhigh">
+
+			<button id="apply" type="submit">Apply</button>
+		</form>
+		<div class="help">
+			<p>Control the
+		</div>
+		<script type="text/javascript">
+			$('form').submit(function () { 
+				var size = ''+$('input[name=fsize]').val()+$('select[name=fsizeunit]').val();
+				$("#test-data").css({'font-size': size, 
+					'font-family': $('input[name=ffam]').val(), 
+					'line-height': $('input[name=lhigh]').val() });  
+				return false; 
+			});
+		</script>
+</div>
+
+		<div id="test-data">
+			<h1>Heading 1</h1>
+
+			<p class="first">Cras magna justo, lacinia quis mollis eu, gravida at magna. Sed posuere egestas velit ut vehicula. Cras eu massa vel augue blandit tincidunt nec quis odio. Donec viverra tincidunt lacus sed dignissim. Ut aliquam cursus arcu sit amet viverra. Integer hendrerit facilisis commodo. Sed nec felis ligula. Cras sed varius arcu. Cras mauris odio, pulvinar nec interdum vel, malesuada quis elit. Nullam vitae nisi leo. Curabitur vitae sapien enim, et hendrerit odio.</p>
+			
+			<p>Quisque aliquam molestie erat eu congue. Ut purus mauris, dictum non iaculis id, posuere ut purus. Aliquam quis augue nisi, vitae tempor felis. Nullam faucibus tempus ipsum, a semper ipsum fringilla eget. Sed velit dolor, semper tempus suscipit vel, pharetra non mauris. Donec vestibulum nulla nec massa ullamcorper sodales. Duis lorem neque, consequat a molestie et, eleifend vitae felis.</p>
+			
+			<h2>Heading 2</h2>
+			
+			<p>In euismod, mauris eget pretium consequat, ligula enim fringilla lectus, id commodo urna felis nec odio. Aliquam sed tortor et ipsum tempus egestas sollicitudin eu velit. Donec scelerisque eros a nibh semper id dapibus odio hendrerit. Duis eu arcu justo. Donec accumsan vulputate fermentum. Proin id mauris tincidunt orci accumsan porttitor egestas at sapien. Sed tincidunt scelerisque sagittis. Integer viverra, orci ac dignissim pellentesque, mi enim porttitor eros, non aliquam lectus magna non nunc.</p>
+
+			<p>Integer nunc nulla, bibendum vel auctor vel, posuere sit amet ligula. Suspendisse quam magna, ullamcorper quis iaculis nec, sodales ac urna. Praesent volutpat nisl eu enim gravida interdum. Duis pulvinar lacinia massa, non accumsan lacus semper at. Maecenas metus mi, malesuada fermentum consectetur sit amet, bibendum eget mauris. Etiam placerat elementum interdum. Maecenas non dui sed nisi venenatis sodales in et metus. Morbi tellus arcu, malesuada placerat viverra sed, hendrerit eget magna. Sed ac varius ligula. Pellentesque molestie odio in ante posuere eleifend.</p>
+
+			<h3>Heading 3</h3>
+
+			<p>Morbi eleifend sem non nisi laoreet gravida. Fusce tincidunt pulvinar nulla eget vestibulum. Praesent dictum auctor nisl vel congue. Donec et leo sit amet elit dictum blandit cursus facilisis ipsum. In hac habitasse platea dictumst. Curabitur a mauris vel nulla venenatis tempus. Mauris posuere tortor nunc. Sed libero nunc, ornare vel porta ornare, ornare faucibus nunc. Ut ut tempus felis. Nullam vulputate justo vitae turpis elementum malesuada. Maecenas condimentum posuere porta. Integer bibendum neque id augue dapibus quis tincidunt mi scelerisque. Vivamus vitae posuere lectus. Donec pellentesque congue ligula, vitae volutpat eros semper sit amet. Pellentesque turpis quam, pharetra non aliquet convallis, varius ac ipsum.</p>
+
+			<p>Integer et odio id justo molestie mollis. In posuere mollis auctor. Nunc bibendum quam non mi consequat eget commodo neque fermentum. Nunc nec euismod est. Donec ligula purus, hendrerit non dapibus accumsan, porta ullamcorper magna. Cras feugiat augue et libero venenatis mollis. Proin nec tellus tellus, non sagittis enim. Curabitur tincidunt accumsan elit, vitae dignissim dui cursus sed. Donec gravida diam eget ligula mattis viverra. Proin tincidunt fermentum ligula ornare lacinia. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam erat volutpat. Nulla facilisi.</p>
+
+			<h4>Heading 4</h4>
+
+			<p>Nullam sed lorem augue, at dapibus velit. Quisque porta, nunc non imperdiet interdum, nisi felis hendrerit lectus, ut faucibus lorem diam nec felis. Proin id blandit justo. Nunc consequat, magna ac scelerisque imperdiet, dolor justo eleifend odio, eget sagittis odio orci sollicitudin dolor. Sed sit amet magna ut quam aliquet viverra molestie vitae ipsum. Morbi laoreet dolor vitae risus tristique a mollis nulla semper. Cras tempor nisi eget nisi rhoncus sit amet eleifend massa congue. Proin at ligula lacus, et dictum odio. Nullam id metus orci, non imperdiet metus. Mauris sed tortor mi, eget scelerisque felis. Proin eu nunc sem, sed molestie ante.</p>
+
+			<p>Nulla volutpat tincidunt volutpat. Integer a sem sed tortor faucibus hendrerit sed eget tellus. Maecenas dapibus pharetra leo ut consequat. Nulla et purus a velit tempor viverra eget sed nunc. Nunc et ultricies nisl. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas mollis laoreet purus vel molestie. Curabitur eget tellus ut lorem rhoncus molestie. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus auctor bibendum vestibulum. Pellentesque et tellus est. Nulla porta, nisl in tempus hendrerit, enim nibh fermentum eros, at dignissim diam magna ut nisi. Pellentesque feugiat blandit nisi, non faucibus justo venenatis eu.</p>
+
+			<h5>Heading 5</h5>
+
+			<p>Nullam hendrerit molestie sapien, ut ultrices sem pulvinar at. Ut viverra augue vel lorem egestas vitae accumsan arcu tincidunt. Nunc tellus enim, imperdiet id tempor et, facilisis eu libero. Fusce hendrerit felis placerat justo imperdiet feugiat. Vivamus sodales hendrerit rutrum. Mauris sit amet lacus et orci facilisis ullamcorper in eget ante. Curabitur malesuada ultrices ante eget varius. Pellentesque quis mauris turpis. Nunc tincidunt scelerisque libero nec porta. Nullam egestas rutrum quam id eleifend. Vestibulum cursus accumsan justo, at consectetur massa facilisis et. Quisque cursus luctus elit. Curabitur egestas blandit vehicula.</p>
+
+			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed a enim leo, vel auctor arcu. Nullam vel neque neque. Etiam vitae imperdiet enim. In sollicitudin scelerisque rhoncus. Maecenas aliquam sollicitudin dolor, ac tincidunt odio tristique in. Nunc et nulla et quam vestibulum suscipit vitae imperdiet est. Sed mollis sagittis dolor in tincidunt. Aliquam ac quam congue nisi consectetur tempus.</p>
+
+			<h6>Heading 6</h6>
+
+			<p>Mauris purus tortor, imperdiet ac rhoncus a, adipiscing quis enim. Fusce in velit ut metus suscipit ullamcorper quis non tellus. Sed id dui non neque ornare dapibus. Aenean blandit sem sed enim ornare id lobortis odio suscipit. Ut aliquam iaculis urna non rhoncus. Quisque eu quam et dui feugiat condimentum vel vel libero. Quisque vel ipsum sapien, eu hendrerit eros. Etiam id orci lacus. Sed pulvinar tincidunt eros, fermentum dictum metus pretium eu. Praesent pretium iaculis faucibus. Quisque et sapien elit. Morbi in est odio, ut fringilla ante.</p>
+
+			<p>Nam eu massa sed dolor faucibus placerat. Mauris ante urna, aliquet non aliquam nec, facilisis quis urna. Curabitur pharetra viverra urna rutrum pulvinar. Vivamus eleifend, dui quis accumsan interdum, urna leo venenatis eros, in mollis justo justo sit amet urna. Nam tortor velit, congue sed sodales vel, scelerisque vitae turpis. Pellentesque laoreet sapien non nulla placerat vitae posuere massa interdum. Morbi vitae eros metus. In mollis massa et felis hendrerit a faucibus ligula blandit.</p>
+
+		</div>
+	</body>
+
+
+</html>
