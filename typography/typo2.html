@@ -9,31 +9,35 @@
 
 
         <style type="text/css">
-        	* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+        	*, *:before, *:after { 
+        		-moz-box-sizing: border-box; 
+        		-webkit-box-sizing: border-box; 
+        		box-sizing: border-box; 
+        	}
 
         	body {
-        		font-size: 100%;
+        		font-size: 100%; /* typically 16px */
         		margin: 0;
         		padding: 0;
         	}
 
         	h1 {
-			    font-size: 3rem; /* 48 / 16 */
+			    font-size: 3em; /* 48 / 16 */
 			}
 			h2 {
-			    font-size: 2.25rem; /* 36 / 16 */
+			    font-size: 2.25em; /* 36 / 16 */
 			}
 			h3 {
-			    font-size: 1.5rem; /* 24 / 16 */
+			    font-size: 1.5em; /* 24 / 16 */
 			}
 			h4 {
-			    font-size: 1.3125rem; /* 21 / 16 */
+			    font-size: 1.3125em; /* 21 / 16 */
 			}
 			h5 {
-			    font-size: 1.125rem; /* 18 / 16 */
+			    font-size: 1.125em; /* 18 / 16 */
 			}
 			h6 {
-			    font-size: 1rem; /* 16 / 16 */
+			    font-size: 1em; /* 16 / 16 */
 			}
 
 			h1,h2,h3,h4,h5,h6 {
@@ -52,32 +56,26 @@
 				opacity: 0.5;
 			}
 			h1:before {
-				content: "3rem";
-				bottom: 1.5rem;
+				content: "3em";
 			}
 			h2:before {
-				content: "2.25rem";
-				bottom: 1.125rem;
+				content: "2.25em";
 			}
 			h3:before {
-				content: "1.5rem";
-				bottom: 0.75rem;
+				content: "1.5em";
 			}
 			h4:before {
-				content: "1.3125rem";
-				bottom: 0.67rem;
+				content: "1.3125em";
 			}
 			h5:before {
-				content: "1.125rem";
-				bottom: 0.55rem;
+				content: "1.125em";
 			}
 			h6:before {
-				content: "1rem";
-				bottom: 0.5rem;
+				content: "1em";
 			}
 
 			p {
-			    font-size: 1rem; /* 16 / 16 */
+			    font-size: 1em; /* 16 / 16 */
 			}
 
 			h1 + p:first-line {
@@ -85,15 +83,21 @@
 				font-variant: small-caps;
 				letter-spacing: 0.1em;
 			}
+
+			#main {
+				width: 60%;
+				margin: 0 10% 0 30%;
+			}
+
 			
-			.sidebar {
+			#sidebar {
 				position: fixed;
 				left: 20px;
 				width: 25%;
 				
 			}
 			.box {
-				font-size: 16px; /* hardwire font-size to avoid scaling with rest of page */
+				
 				padding: 0.5em;
 				background: #eee;
 				border: 2px solid darkgray;
@@ -103,8 +107,8 @@
 			}
 
 			/* faking an h1 to avoid clash with test-data styling */
-			.h1 {
-				font-size: 20px;
+			.box > .h1 {
+				font-size: 1.5em;
 				font-weight: bold;
 			}
 
@@ -113,51 +117,47 @@
 				margin-right: 0.5em;
 			}
 
-			#test-data {
-				width: 60%;
-				margin: 0 10% 0 30%;
-			}
-
-			.help {
-				border-top: 1px solid gray;
-			}
 
 			code {
 				background-color: #ffc;
 				padding: 2px;
 				margin: -2px;
+				font-size: 14px;
 			}
+
         </style>
 
 
 	</head>
 	<body>
-		<div class="sidebar">
-			<div class="box">
+		<div id="sidebar">
+			<div class="box about">
 				<div class="h1">About</div>
-				<p>Values set below will be applied to the <code>html</code> element. <code>font-size</code>s for the <code>h*</code> elements are defined using <code>rem</code> units (specific values detailed beside each). Otherwise, default values come from the system defined defaults. No CSS reset is currently applied.</p>
+				<p>Values set below will be applied to the <code>html</code> element. <code>font-size</code>s for the <code>h*</code> elements are defined using <code>em</code> units (specific values detailed beside each). Otherwise, default values come from the system defined defaults. No CSS reset is currently applied.</p>
 				
 			</div>
+
 			<div class="box font-switcher">
 				<form>
 					<div>
-					<label for="ffam">Font Familly:</label>
-					<input type="text" size="20" name="ffam" id="ffam">
+						<label for="ffam">Font Familly:</label>
+						<input type="text" size="20" name="ffam" id="ffam">
 					</div>
 					<div>
-					<label for="fsize">Font size:</label>
-					<input type="text" size="2" name="fsize" id="fsize">
-					<select name="fsizeunit" id="fsizeunit"><option value="px">px</option><option value="em">em</option><option value="rem">rem</option></select>
+						<label for="fsize">Font size:</label>
+						<input type="text" size="2" name="fsize" id="fsize">
+						<select name="fsizeunit" id="fsizeunit"><option value="px">px</option><option value="em">em</option><option value="rem">rem</option></select>
 					</div>
 					<div>
-					<label for="lhigh">Line Height:</label>
-					<input type="text" size="2" name="lhigh" id="lhigh">
+						<label for="lhigh">Line height:</label>
+						<input type="text" size="2" name="lhigh" id="lhigh">
 					</div>
 					<button id="apply" type="submit">Apply</button>
 				</form>
 			</div>
+
 		</div>
-		<div id="test-data">
+		<div id="main">
 			<h1>Heading 1</h1>
 
 			<p class="first">Cras magna justo, lacinia quis mollis eu, gravida at magna. Sed posuere egestas velit ut vehicula. Cras eu massa vel augue blandit tincidunt nec quis odio. Donec viverra tincidunt lacus sed dignissim. Ut aliquam cursus arcu sit amet viverra. Integer hendrerit facilisis commodo. Sed nec felis ligula. Cras sed varius arcu. Cras mauris odio, pulvinar nec interdum vel, malesuada quis elit. Nullam vitae nisi leo. Curabitur vitae sapien enim, et hendrerit odio.</p>
@@ -200,9 +200,10 @@
 		<script type="text/javascript">
 			$('form').submit(function () { 
 				
-				$("html").css({'font-size': $('input[name=fsize]').val()+$('select[name=fsizeunit]').val(), 
+				$("#main").css({'font-size': $('input[name=fsize]').val()+$('select[name=fsizeunit]').val(), 
 					'font-family': $('input[name=ffam]').val(), 
-					'line-height': $('input[name=lhigh]').val() });  
+					'line-height': $('input[name=lhigh]').val() });
+
 				return false; 
 			});
 		</script>
