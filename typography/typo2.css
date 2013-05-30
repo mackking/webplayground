@@ -1,0 +1,115 @@
+*, *:before, *:after { 
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box; 
+}
+
+body {
+	font-size: 100%; /* typically 16px */
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+    font-size: 3em; /* 48 / 16 */
+}
+h2 {
+    font-size: 2.25em; /* 36 / 16 */
+}
+h3 {
+    font-size: 1.5em; /* 24 / 16 */
+}
+h4 {
+    font-size: 1.3125em; /* 21 / 16 */
+}
+h5 {
+    font-size: 1.125em; /* 18 / 16 */
+}
+h6 {
+    font-size: 1em; /* 16 / 16 */
+}
+
+h1,h2,h3,h4,h5,h6 {
+	position: relative;
+}
+
+h1:before,h2:before,h3:before,h4:before,h5:before,h6:before {
+	
+	border: 2px solid gray;
+	background-color: lightgray;
+	padding: 2px;
+	font-size: 12px;
+	position: absolute;
+	right: 0;
+	
+	opacity: 0.5;
+}
+h1:before {
+	content: "3em";
+}
+h2:before {
+	content: "2.25em";
+}
+h3:before {
+	content: "1.5em";
+}
+h4:before {
+	content: "1.3125em";
+}
+h5:before {
+	content: "1.125em";
+}
+h6:before {
+	content: "1em";
+}
+
+p {
+    font-size: 1em; /* 16 / 16 */
+}
+
+h1 + p:first-line {
+	font-size: larger;
+	font-variant: small-caps;
+	letter-spacing: 0.1em;
+}
+
+#main {
+	width: 60%;
+	margin: 0 10% 0 30%;
+}
+
+
+#sidebar {
+	position: fixed;
+	left: 20px;
+	width: 25%;
+	
+}
+.box {
+	
+	padding: 0.5em;
+	background: #eee;
+	border: 2px solid darkgray;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	
+}
+
+/* faking an h1 to avoid clash with test-data styling */
+.box > .h1 {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.font-switcher label {
+	font-weight: bold;
+	margin-right: 0.5em;
+}
+
+
+code {
+	background-color: #ffc;
+	padding: 2px;
+	margin: -2px;
+	font-size: 14px;
+}
