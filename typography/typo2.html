@@ -14,7 +14,7 @@
 			<div class="box about">
 				<div class="h1">About</div>
 				<p>Values set below will be applied to the <code>#main</code> element (sample text to the right). <code>font-size</code>s for the <code>h*</code> elements are defined using <code>em</code> units (specific values detailed beside each). Otherwise, default values come from the system defined defaults. No CSS reset is currently applied.</p>
-				<p>Note: All elements within sample text are <code>contenteditable</code>. Just click away and start typing.</p>
+				<p>Note: The whole sample text is <code>contenteditable</code>. Just click and start typing away.</p>
 			</div>
 
 			<div class="box font-switcher">
@@ -37,7 +37,7 @@
 			</div>
 
 		</div>
-		<div id="main">
+		<div id="main" contenteditable>
 			<h1>Heading 1</h1>
 
 			<p class="first">Cras magna justo, lacinia quis mollis eu, gravida at magna. Sed posuere egestas velit ut vehicula. Cras eu massa vel augue blandit tincidunt nec quis odio. Donec viverra tincidunt lacus sed dignissim. Ut aliquam cursus arcu sit amet viverra. Integer hendrerit facilisis commodo. Sed nec felis ligula. Cras sed varius arcu. Cras mauris odio, pulvinar nec interdum vel, malesuada quis elit. Nullam vitae nisi leo. Curabitur vitae sapien enim, et hendrerit odio.</p>
@@ -48,11 +48,15 @@
 			
 			<p>In euismod, mauris eget pretium consequat, ligula enim fringilla lectus, id commodo urna felis nec odio. Aliquam sed tortor et ipsum tempus egestas sollicitudin eu velit. Donec scelerisque eros a nibh semper id dapibus odio hendrerit. Duis eu arcu justo. Donec accumsan vulputate fermentum. Proin id mauris tincidunt orci accumsan porttitor egestas at sapien. Sed tincidunt scelerisque sagittis. Integer viverra, orci ac dignissim pellentesque, mi enim porttitor eros, non aliquam lectus magna non nunc.</p>
 
-			<p>Integer nunc nulla, bibendum vel auctor vel, posuere sit amet ligula. Suspendisse quam magna, ullamcorper quis iaculis nec, sodales ac urna. Praesent volutpat nisl eu enim gravida interdum. Duis pulvinar lacinia massa, non accumsan lacus semper at. Maecenas metus mi, malesuada fermentum consectetur sit amet, bibendum eget mauris. Etiam placerat elementum interdum. Maecenas non dui sed nisi venenatis sodales in et metus. Morbi tellus arcu, malesuada placerat viverra sed, hendrerit eget magna. Sed ac varius ligula. Pellentesque molestie odio in ante posuere eleifend.</p>
+			<ul><li>Integer nunc nulla</li> <li>bibendum vel auctor vel</li> <li>posuere sit amet ligula</li></ul> 
+
+			<p>Suspendisse quam magna, ullamcorper quis iaculis nec, sodales ac urna. Praesent volutpat nisl eu enim gravida interdum. Duis pulvinar lacinia massa, non accumsan lacus semper at. Maecenas metus mi, malesuada fermentum consectetur sit amet, bibendum eget mauris. Etiam placerat elementum interdum. Maecenas non dui sed nisi venenatis sodales in et metus. Morbi tellus arcu, malesuada placerat viverra sed, hendrerit eget magna. Sed ac varius ligula. Pellentesque molestie odio in ante posuere eleifend.</p>
 
 			<h3>Heading 3</h3>
 
 			<p>Morbi eleifend sem non nisi laoreet gravida. Fusce tincidunt pulvinar nulla eget vestibulum. Praesent dictum auctor nisl vel congue. Donec et leo sit amet elit dictum blandit cursus facilisis ipsum. In hac habitasse platea dictumst. Curabitur a mauris vel nulla venenatis tempus. Mauris posuere tortor nunc. Sed libero nunc, ornare vel porta ornare, ornare faucibus nunc. Ut ut tempus felis. Nullam vulputate justo vitae turpis elementum malesuada. Maecenas condimentum posuere porta. Integer bibendum neque id augue dapibus quis tincidunt mi scelerisque. Vivamus vitae posuere lectus. Donec pellentesque congue ligula, vitae volutpat eros semper sit amet. Pellentesque turpis quam, pharetra non aliquet convallis, varius ac ipsum.</p>
+
+			<ol><li>Integer nunc nulla</li> <li>bibendum vel auctor vel</li> <li>posuere sit amet ligula</li></ol>
 
 			<p>Integer et odio id justo molestie mollis. In posuere mollis auctor. Nunc bibendum quam non mi consequat eget commodo neque fermentum. Nunc nec euismod est. Donec ligula purus, hendrerit non dapibus accumsan, porta ullamcorper magna. Cras feugiat augue et libero venenatis mollis. Proin nec tellus tellus, non sagittis enim. Curabitur tincidunt accumsan elit, vitae dignissim dui cursus sed. Donec gravida diam eget ligula mattis viverra. Proin tincidunt fermentum ligula ornare lacinia. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam erat volutpat. Nulla facilisi.</p>
 
@@ -65,6 +69,12 @@
 			<h5>Heading 5</h5>
 
 			<p>Nullam hendrerit molestie sapien, ut ultrices sem pulvinar at. Ut viverra augue vel lorem egestas vitae accumsan arcu tincidunt. Nunc tellus enim, imperdiet id tempor et, facilisis eu libero. Fusce hendrerit felis placerat justo imperdiet feugiat. Vivamus sodales hendrerit rutrum. Mauris sit amet lacus et orci facilisis ullamcorper in eget ante. Curabitur malesuada ultrices ante eget varius. Pellentesque quis mauris turpis. Nunc tincidunt scelerisque libero nec porta. Nullam egestas rutrum quam id eleifend. Vestibulum cursus accumsan justo, at consectetur massa facilisis et. Quisque cursus luctus elit. Curabitur egestas blandit vehicula.</p>
+
+			<dl>
+				<dt>Integer</dt> <dd>nunc nulla</dd> 
+				<dt>bibendum</dt> <dd>vel auctor vel</dd> 
+				<dt>posuere</dt> <dd>sit amet ligula</dd>
+			</dl>
 
 			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed a enim leo, vel auctor arcu. Nullam vel neque neque. Etiam vitae imperdiet enim. In sollicitudin scelerisque rhoncus. Maecenas aliquam sollicitudin dolor, ac tincidunt odio tristique in. Nunc et nulla et quam vestibulum suscipit vitae imperdiet est. Sed mollis sagittis dolor in tincidunt. Aliquam ac quam congue nisi consectetur tempus.</p>
 
@@ -87,11 +97,7 @@
 				return false; 
 			});
 
-			$('h1,h2,h3,h4,h5,h6,p', '#main').click(function () {
-				$(this).attr('contenteditable', 'true');
-			}).focusout(function () {
-				$(this).attr('contenteditable', 'false');
-			});
+			
 		</script>
 
 	</body>
