@@ -13,8 +13,8 @@
 		<div id="sidebar">
 			<div class="box about">
 				<div class="h1">About</div>
-				<p>Values set below will be applied to the <code>html</code> element. <code>font-size</code>s for the <code>h*</code> elements are defined using <code>em</code> units (specific values detailed beside each). Otherwise, default values come from the system defined defaults. No CSS reset is currently applied.</p>
-				
+				<p>Values set below will be applied to the <code>#main</code> element (sample text to the right). <code>font-size</code>s for the <code>h*</code> elements are defined using <code>em</code> units (specific values detailed beside each). Otherwise, default values come from the system defined defaults. No CSS reset is currently applied.</p>
+				<p>Note: All elements within sample text are <code>contenteditable</code>. Just click away and start typing.</p>
 			</div>
 
 			<div class="box font-switcher">
@@ -85,6 +85,12 @@
 					'line-height': $('input[name=lhigh]').val() });
 
 				return false; 
+			});
+
+			$('h1,h2,h3,h4,h5,h6,p', '#main').click(function () {
+				$(this).attr('contenteditable', 'true');
+			}).focusout(function () {
+				$(this).attr('contenteditable', 'false');
 			});
 		</script>
 
