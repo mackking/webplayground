@@ -9,6 +9,8 @@
 
 
         <style type="text/css">
+        	* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
         	body {
         		font-size: 100%;
         		margin: 0;
@@ -84,10 +86,26 @@
 				letter-spacing: 0.1em;
 			}
 			
-			.font-switcher {
-				padding: 0.3em 0.5em;
+			.sidebar {
+				position: fixed;
+				left: 20px;
+				width: 25%;
+				
+			}
+			.box {
+				font-size: 16px; /* hardwire font-size to avoid scaling with rest of page */
+				padding: 0.5em;
 				background: #eee;
-				border-bottom: 2px solid darkgray;
+				border: 2px solid darkgray;
+				border-radius: 10px;
+				margin-bottom: 20px;
+				
+			}
+
+			/* faking an h1 to avoid clash with test-data styling */
+			.h1 {
+				font-size: 20px;
+				font-weight: bold;
 			}
 
 			.font-switcher label {
@@ -97,37 +115,48 @@
 
 			#test-data {
 				width: 60%;
-				margin: 0 auto;
+				margin: 0 10% 0 30%;
+			}
+
+			.help {
+				border-top: 1px solid gray;
+			}
+
+			code {
+				background-color: #ffc;
+				padding: 2px;
+				margin: -2px;
 			}
         </style>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 
 	</head>
 	<body>
-<div class="font-switcher">
-		<form>
-			<label for="ffam">Font Familly:</label>
-			<input type="text" size="20" name="ffam" id="ffam">
-			<label for="fsize">Font size:</label>
-			<input type="text" size="2" name="fsize" id="fsize">
-			<select name="fsizeunit" id="fsizeunit"><option value="px">px</option><option value="em">em</option><option value="rem">rem</option></select>
-			<label for="lhigh">Line Height:</label>
-			<input type="text" size="2" name="lhigh" id="lhigh">
-
-			<button id="apply" type="submit">Apply</button>
-		</form>
-		<script type="text/javascript">
-			$('form').submit(function () { 
-				var size = ''+$('input[name=fsize]').val()+$('select[name=fsizeunit]').val();
-				$("#test-data").css({'font-size': size, 
-					'font-family': $('input[name=ffam]').val(), 
-					'line-height': $('input[name=lhigh]').val() });  
-				return false; 
-			});
-		</script>
-</div>
-
+		<div class="sidebar">
+			<div class="box">
+				<div class="h1">About</div>
+				<p>Values set below will be applied to the <code>html</code> element. <code>font-size</code>s for the <code>h*</code> elements are defined using <code>rem</code> units (specific values detailed beside each). Otherwise, default values come from the system defined defaults. No CSS reset is currently applied.</p>
+				
+			</div>
+			<div class="box font-switcher">
+				<form>
+					<div>
+					<label for="ffam">Font Familly:</label>
+					<input type="text" size="20" name="ffam" id="ffam">
+					</div>
+					<div>
+					<label for="fsize">Font size:</label>
+					<input type="text" size="2" name="fsize" id="fsize">
+					<select name="fsizeunit" id="fsizeunit"><option value="px">px</option><option value="em">em</option><option value="rem">rem</option></select>
+					</div>
+					<div>
+					<label for="lhigh">Line Height:</label>
+					<input type="text" size="2" name="lhigh" id="lhigh">
+					</div>
+					<button id="apply" type="submit">Apply</button>
+				</form>
+			</div>
+		</div>
 		<div id="test-data">
 			<h1>Heading 1</h1>
 
@@ -166,7 +195,17 @@
 			<p>Nam eu massa sed dolor faucibus placerat. Mauris ante urna, aliquet non aliquam nec, facilisis quis urna. Curabitur pharetra viverra urna rutrum pulvinar. Vivamus eleifend, dui quis accumsan interdum, urna leo venenatis eros, in mollis justo justo sit amet urna. Nam tortor velit, congue sed sodales vel, scelerisque vitae turpis. Pellentesque laoreet sapien non nulla placerat vitae posuere massa interdum. Morbi vitae eros metus. In mollis massa et felis hendrerit a faucibus ligula blandit.</p>
 
 		</div>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$('form').submit(function () { 
+				
+				$("html").css({'font-size': $('input[name=fsize]').val()+$('select[name=fsizeunit]').val(), 
+					'font-family': $('input[name=ffam]').val(), 
+					'line-height': $('input[name=lhigh]').val() });  
+				return false; 
+			});
+		</script>
+
 	</body>
-
-
 </html>
