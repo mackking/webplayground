@@ -1,8 +1,10 @@
-# Miscelaneous Web 'projects' 
+# Web Playground 
 
 General collection of miscelaneous mini web projects/playground stuff. 
 These things will likely live hear until they warrent spawning off into 
 their own repo.
+
+You can also check out my collection of [Codepens](http://codepen.io/mackking) for other mini projects.
 
 
 ## Copying/License

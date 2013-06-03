@@ -7,13 +7,53 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-		<link rel="stylesheet" type="text/css" href="/css/gg-grid.css">
-
         <style type="text/css">
         	body {
         		font-size: 100%;
         		line-height: 1.4;
+        		margin: 0;
         	}
+
+			.main {
+				margin-top: 3em;
+			}
+
+			.box {
+				display: inline-block;
+				vertical-align: top;
+				width: 45%;
+				
+				margin: 2.5%;
+				padding: 1em;
+				border: 2px solid darkgray;
+				box-sizing: border-box;
+				position: relative;
+			}
+
+			.details {
+				position: absolute;
+				top: -2px;
+				right: -2px;
+				border: 2px solid darkgray;
+				background-color: #ddd;
+				padding: 5px;
+				font-family: monospace;
+			}
+
+			.font-switcher {
+				padding: 0.3em 0.5em;
+				background: #eee;
+				border-bottom: 2px solid darkgray;
+				position: fixed;
+				width: 100%;
+				top: 0;
+				left: 0;
+			}
+
+			.font-switcher label {
+				font-weight: bold;
+				margin-right: 0.5em;
+			}
 
         	h1 {
 			    font-size: 3em; /* 48 / 16 */
@@ -34,6 +74,7 @@
 			    font-size: 1em; /* 16 / 16 */
 			    font-variant: small-caps;
 			}
+
 			p {
 			    font-size: 1em; /* 16 / 16 */
 			}
@@ -57,21 +98,6 @@
         		font-size: 14px;
         	}
 			
-			.font-switcher {
-				padding: 0.3em 0.5em;
-				background: #eee;
-				border-bottom: 2px solid darkgray;
-				position: fixed;
-				width: 100%;
-				top: 0;
-				left: 0;
-			}
-
-			.font-switcher label {
-				font-weight: bold;
-				margin-right: 0.5em;
-			}
-
 			.times {
 			/* Times New Roman-based stack */
 			font-family: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
@@ -104,6 +130,7 @@
 			/* Monospace stack */
 			font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
 			}
+
         </style>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
@@ -133,29 +160,9 @@
 		</script>
 </div>
 
-<div class="grid">
-		<div class="grid__col--50">
-			<h1>Heading 1 &ndash; Spitfire<sup>91</sup></h1>
-			<p class="first">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<h2>Heading 2</h2>
-			<h3>Heading 3</h3>
-			<h4>Heading 4</h4>
-			<h5>Heading 5</h5>
-			<h6>Heading 6</h6>
-		</div><!--
-
-	 --><div class="base18 grid__col--50">
+<div class="main">
+		<div class="box">
+			<div class="details">font-size: default</div>
 			<h1>Heading 1</h1>
 			<p class="first">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -176,7 +183,8 @@
 			<h6>Heading 6</h6>
 		</div><!--
 
-	 --><div class="base16 grid__col--50">
+	 --><div class="base18 box">
+	 		<div class="details">font-size: 18px</div>
 			<h1>Heading 1</h1>
 			<p class="first">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -197,7 +205,30 @@
 			<h6>Heading 6</h6>
 		</div><!--
 
-	 --><div class="base14 grid__col--50">
+	 --><div class="base16 box">
+	 		<div class="details">font-size: 16px</div>
+			<h1>Heading 1</h1>
+			<p class="first">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<h2>Heading 2</h2>
+			<h3>Heading 3</h3>
+			<h4>Heading 4</h4>
+			<h5>Heading 5</h5>
+			<h6>Heading 6</h6>
+		</div><!--
+
+	 --><div class="base14 box">
+	 		<div class="details">font-size: 14px</div>
 			<h1>Heading 1</h1>
 			<p class="first">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
