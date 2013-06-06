@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Layout using Position</title>
+	<style>
+	.page {
+		position: relative;
+	}
+	.main { 
+		margin-left: 120px; 
+	}
+	.sidebar { 
+		position: absolute; 
+		top: 0; 
+		left: 0; 
+		width: 110px; 
+	}
+	.lo {
+		border: 1px solid blue;
+	}
+	.lo > .lo {
+		border-color: red;
+	}
+	</style>
+</head>
+<body>
+	<div class="head lo">
+		<h1>Layout using Position</h1>
+	</div>
+	<div class="page lo">
+		<div class="main lo">
+			<h2>Main Content Area</h2>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, sunt, facilis nihil nostrum rerum expedita reprehenderit molestias praesentium est modi enim quos alias vero veritatis neque pariatur ipsum a. Voluptates? Dolorum, minima, porro quisquam perspiciatis quaerat officiis reprehenderit enim esse nisi optio doloremque provident ex accusamus rerum obcaecati nostrum eligendi quasi dolorem voluptatem ipsam assumenda consequuntur consectetur doloribus mollitia delectus!</p>
+			<p>Sunt, placeat, deserunt voluptatem qui fugit consectetur ipsam perferendis vitae quos error. Reiciendis, voluptas id vitae nulla nesciunt perspiciatis veniam molestias aspernatur? Cupiditate, quod molestiae aliquam deserunt esse tempora. Laborum!</p>
+			<p>Eius, a, iste tempora earum saepe vel in. Autem, asperiores, commodi ipsam dolores facere quod eaque et. Facilis, odit, nisi, reprehenderit, omnis non totam aliquam similique voluptatibus dolor repellat inventore.</p>
+			<p>Minus, ad, animi, voluptatem eligendi explicabo nisi asperiores recusandae quo est temporibus similique illum cumque quibusdam sequi pariatur beatae excepturi sapiente id quidem maxime adipisci in harum aliquam praesentium unde.</p>
+		</div>
+		<div class="sidebar lo">
+			<ul><li><a href="">link 1</a></li>
+			<li><a href="">link 2</a></li>
+			<li><a href="">link 3</a></li>
+			<li><a href="">link 4</a></li>
+			<li><a href="">link 5</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="foot lo">
+		<small>&copy; #### by Someone</small>
+	</div>
+</body>
+</html>
