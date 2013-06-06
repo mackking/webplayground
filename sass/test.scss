@@ -1,0 +1,99 @@
+//
+// Mixins need to be first as they appear to be source order dependant
+//
+
+@mixin roundbox($width, $border-color, $border-width: 5px, $margin: 0.5em, $pad: 1em, $radius: 10px) {
+	margin: $margin;
+	padding: $pad;
+	width: $width;
+	border: $border-width solid $border-color;
+	border-radius: $radius;
+	background-color: lighten($border-color, 25%);
+}
+
+@mixin floater($dir: left) {
+	float: $dir;
+}
+
+// Border-Box FTW (http://www.paulirish.com/2012/box-sizing-border-box-ftw/)
+@mixin borderbox {
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box;
+}
+
+
+html {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+.intro {
+	margin-bottom: 1em;
+	padding: 0.5em;
+	background-color: #ffc;
+	// Ooo, nested property definition
+	border-bottom: {
+		
+		width: 2px;
+
+		color: gray;
+		style: solid;
+	}
+}
+
+.playarea {
+	margin: 0 auto;
+	max-width: 80%;
+}
+
+
+.orangebox {
+	@include roundbox(20em, orange, $radius: 25px);
+	@include borderbox;
+	@include floater;
+}
+.redbox {
+	// uses defaults for bwidth, pad, radius
+	@include roundbox(15%, red); 
+	@include borderbox;
+	@include floater;
+}
+.greenbox {
+	// defaults for bwidth & pad but passing radius using named variable
+	@include roundbox(300px, green, 10px, $radius: 50px); 
+	@include borderbox;
+	@include floater(right);
+}
+
+.demobox {
+	@extend .clearfix;
+	margin: 1em;
+	padding: 1em;
+	border: 1px solid #ccc;
+	@include borderbox;
+}
+
+
+/* Micro Clearfix */
+.clearfix {
+    *zoom: 1;
+    &:before, &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+/* New Block Formatting Context */
+.nbfc {
+	overflow: hidden;
+	*zoom: 1;
+}

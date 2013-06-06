@@ -1,0 +1,77 @@
+html {
+  height: 100%; }
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+
+.intro {
+  margin-bottom: 1em;
+  padding: 0.5em;
+  background-color: #ffc;
+  border-bottom-width: 2px;
+  border-bottom-color: gray;
+  border-bottom-style: solid; }
+
+.playarea {
+  margin: 0 auto;
+  max-width: 80%; }
+
+.orangebox {
+  margin: 0.5em;
+  padding: 1em;
+  width: 20em;
+  border: 5px solid orange;
+  border-radius: 25px;
+  background-color: #ffd280;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left; }
+
+.redbox {
+  margin: 0.5em;
+  padding: 1em;
+  width: 15%;
+  border: 5px solid red;
+  border-radius: 10px;
+  background-color: #ff8080;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left; }
+
+.greenbox {
+  margin: 0.5em;
+  padding: 1em;
+  width: 300px;
+  border: 10px solid green;
+  border-radius: 50px;
+  background-color: lime;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  float: right; }
+
+.demobox {
+  margin: 1em;
+  padding: 1em;
+  border: 1px solid #ccc;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* Micro Clearfix */
+.clearfix, .demobox {
+  *zoom: 1; }
+  .clearfix:before, .demobox:before, .clearfix:after, .demobox:after {
+    content: "";
+    display: table; }
+  .clearfix:after, .demobox:after {
+    clear: both; }
+
+/* New Block Formatting Context */
+.nbfc {
+  overflow: hidden;
+  *zoom: 1; }

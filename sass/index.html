@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Playing with SCSS</title>
+	<link rel="stylesheet" href="test.css">
+	<link rel="stylesheet" href="/3rdparty/prism/prism.css">
+</head>
+<body>
+	<div class="intro">
+		<h1>Playing with SCSS</h1>
+
+		<p>Just a quick sample page to start playing around with SCSS and its features. Mostly below will be random blobs of text/html that I'll style starting from SCSS.</p>
+	</div>
+
+	<div class="playarea">
+
+		<h2>Mixins</h2>
+		
+		<p>Mixins allow for </p>
+
+		<pre class="line-numbers"><code class="language-scss">
+@mixin roundbox($width, $bcolor, $bwidth: 5px, $margin: 0.5em, $pad: 1em, $radius: 10px) {
+	margin: $margin;
+	padding: $pad;
+	width: $width;
+	border: $bwidth solid $bcolor;
+	border-radius: $radius;
+	background-color: lighten($bcolor, 25%);
+}
+
+.orangebox {
+	@include roundbox(20em, orange, $radius: 25px);
+}
+.redbox {
+	@include roundbox(15%, red); 
+}
+.greebox {
+	@include roundbox(300px, green, 10px, $radius: 50px); 
+}
+		</code></pre>
+
+		<div class="demobox">
+			<div class="orangebox">
+				<p>Quick little box with variables defining colors used.</p>
+			</div>
+
+			<div class="redbox">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, illum, et, laborum, consequatur inventore nostrum optio impedit maiores quasi autem earum iure aliquam ut corporis ipsam laboriosam odit sequi iste.</p>
+			</div>
+
+			<div class="greenbox">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, cumque, aperiam repudiandae maxime fuga in minus est omnis rerum natus quibusdam sint nemo blanditiis fugiat repellendus quia ipsam! Ipsam, voluptas.</p>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="/3rdparty/prism/prism.js"></script>
+	<script src="/3rdparty/prism/line-numbers.js"></script>
+</body>
+</html>
