@@ -1,23 +1,42 @@
 html {
-  height: 100%; }
+  font-family: sans-serif; }
 
 body {
   margin: 0;
   padding: 0;
   height: 100%; }
 
-.intro {
-  margin-bottom: 1em;
-  padding: 0.5em;
-  background-color: #ffc;
-  border-bottom-width: 2px;
-  border-bottom-color: gray;
-  border-bottom-style: solid; }
-
-.playarea {
+.layout, .main, .colophon small {
   margin: 0 auto;
   max-width: 80%; }
 
+.masthead {
+  padding: 0.5em;
+  background-color: #ffc;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: gray; }
+
+.tagline {
+  padding-left: 25%;
+  text-align: right; }
+
+section {
+  border-bottom: 1px solid gray; }
+
+section:last-of-type {
+  border: none; }
+
+.colophon {
+  background-color: #ffc;
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: gray; }
+  .colophon small {
+    display: block;
+    padding: 0.5em 0; }
+
+/** Demo elements */
 .orangebox {
   margin: 0.5em;
   padding: 1em;

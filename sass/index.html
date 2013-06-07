@@ -2,24 +2,38 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Playing with SCSS</title>
+	<title>Playing with SASS</title>
 	<link rel="stylesheet" href="test.css">
 	<link rel="stylesheet" href="/3rdparty/prism/prism.css">
 </head>
 <body>
-	<div class="intro">
-		<h1>Playing with SCSS</h1>
+	<header class="masthead" role="banner">
+		<div class="layout">
+			<h1>Playing with SASS</h1>
 
-		<p>Just a quick sample page to start playing around with SCSS and its features. Mostly below will be random blobs of text/html that I'll style starting from SCSS.</p>
-	</div>
+			<div class="tagline">Learning some basics, and playing around with <a href="http://sass-lang.com">SASS</a>.</div>
+		</div>
+	</header>
+	
+	<main class="main" role="main">
+		<section id="intro">
+			<h2>Introduction</h2>
 
-	<div class="playarea">
+			<p>SASS is an extention of CSS3 that adds a number of enhancements to it.
+		</section>
+		<section id="basics">
+			<h2>Basics</h2>
 
-		<h2>Mixins</h2>
-		
-		<p>Mixins allow for </p>
+			<p>
+		</section>
+		<section id="mixins">
 
-		<pre class="line-numbers"><code class="language-scss">
+			<h2>Mixins</h2>
+			
+			<p>Mixins allow for </p>
+
+<h3>Example</h3>
+<pre class="line-numbers"><code class="language-scss">
 @mixin roundbox($width, $bcolor, $bwidth: 5px, $margin: 0.5em, $pad: 1em, $radius: 10px) {
 	margin: $margin;
 	padding: $pad;
@@ -38,23 +52,29 @@
 .greebox {
 	@include roundbox(300px, green, 10px, $radius: 50px); 
 }
-		</code></pre>
+</code></pre>
 
-		<div class="demobox">
-			<div class="orangebox">
-				<p>Quick little box with variables defining colors used.</p>
+			<h3>Demo</h3>
+			<div class="demobox">
+				<div class="orangebox">
+					<p>Quick little box with variables defining colors used.</p>
+				</div>
+
+				<div class="redbox">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, illum, et, laborum, consequatur inventore nostrum optio impedit maiores quasi autem earum iure aliquam ut corporis ipsam laboriosam odit sequi iste.</p>
+				</div>
+
+				<div class="greenbox">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, cumque, aperiam repudiandae maxime fuga in minus est omnis rerum natus quibusdam sint nemo blanditiis fugiat repellendus quia ipsam! Ipsam, voluptas.</p>
+				</div>
 			</div>
 
-			<div class="redbox">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, illum, et, laborum, consequatur inventore nostrum optio impedit maiores quasi autem earum iure aliquam ut corporis ipsam laboriosam odit sequi iste.</p>
-			</div>
+		</section>
+	</main>
 
-			<div class="greenbox">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, cumque, aperiam repudiandae maxime fuga in minus est omnis rerum natus quibusdam sint nemo blanditiis fugiat repellendus quia ipsam! Ipsam, voluptas.</p>
-			</div>
-		</div>
-
-	</div>
+	<footer class="colophon" role="contentinfo">
+		<small>Last Updated: <script>document.write(new Date(document.lastModified).toISOString().substring(0,10));</script></small>
+	</footer>
 
 	<script src="/3rdparty/prism/prism.js"></script>
 	<script src="/3rdparty/prism/line-numbers.js"></script>

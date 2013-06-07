@@ -24,7 +24,7 @@
 
 
 html {
-	height: 100%;
+	font-family: sans-serif;
 }
 
 body {
@@ -33,25 +33,56 @@ body {
 	height: 100%;
 }
 
-.intro {
-	margin-bottom: 1em;
-	padding: 0.5em;
-	background-color: #ffc;
-	// Ooo, nested property definition
-	border-bottom: {
-		
-		width: 2px;
-
-		color: gray;
-		style: solid;
-	}
-}
-
-.playarea {
+// Generic layout element to use to apply consistent page layout sizes
+.layout {
 	margin: 0 auto;
 	max-width: 80%;
 }
 
+.main {
+	@extend .layout;
+}
+
+.masthead {
+	padding: 0.5em;
+	background-color: #ffc;
+	// Ooo, nested property definition
+	border-bottom: {
+		width: 2px;
+		style: solid;
+		color: gray;
+	}
+}
+
+.tagline {
+	padding-left: 25%;
+	text-align: right;
+}
+
+section {
+	border-bottom: 1px solid gray;
+}
+
+section:last-of-type {
+	border: none;
+}
+
+.colophon {
+	background-color: #ffc;
+	border-top: {
+		width: 2px;
+		style: solid;
+		color: gray;
+	}
+	small {
+		@extend .layout;
+		display: block;
+		padding: 0.5em 0;
+	}
+}
+
+
+/** Demo elements */
 
 .orangebox {
 	@include roundbox(20em, orange, $radius: 25px);
