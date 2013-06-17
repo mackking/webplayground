@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Basic HTML5 Document with WAI-ARIA Landmarks</title>
+
+	<style type="text/css">
+	
+	[role] {
+		position: relative;
+		padding: 2em 1em 1em;
+		border: 1px solid gray;
+	}
+
+	[role]:before {
+		content: "<"attr(data-e)" role="attr(role)">";
+		position: absolute;
+		top: -1px;
+		left: -1px;
+		border: 1px solid gray;
+		background-color: #ffc;
+		padding: 2px;
+	}
+
+	aside {
+		float: right;
+		width: 25%;
+	}
+
+	.cf:before,
+	.cf:after {
+	    content:"";
+	    display:table;
+	}
+
+	.cf:after {
+	    clear:both;
+	}
+
+	</style>
+</head>
+<body>
+	<header role="banner" data-e="header">
+		<h1>Basic HTML5 Document with WAI-ARIA Landmarks</h1>
+
+		<nav role="navigation" data-e="nav">
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</nav>
+
+	</header>
+
+	<main role="main" data-e="main">
+
+		<p>Quick demo document that includes the main <a href="http://www.w3.org/TR/wai-aria/">WAI-ARIA</a> <a href="http://www.w3.org/TR/wai-aria/roles#landmark_roles">Landmark Roles</a>.
+		
+		<aside role="complementary" data-e="aside">
+			<p>See <a href="http://blog.paciellogroup.com/2013/02/using-wai-aria-landmarks-2013/">Using WAI-ARIA Landmarks – 2013</a> for a good discussion.</p>
+
+			<form role="search" data-e="form">
+				<input type="search" name="search" results="5" placeholder="search...">
+				<button type="submit">Go</button>
+			</form>
+		</aside>
+		<div class="cf"><!-- bah! need extra element so won't break custom :before showing role & element name --></div>
+	</main>
+
+	<footer role="contentinfo" data-e="footer">
+		<small>&copy; Nobody in particular</small>
+	</footer>
+	
+</body>
+</html>
